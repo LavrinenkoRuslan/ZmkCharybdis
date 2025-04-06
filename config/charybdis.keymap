@@ -15,8 +15,13 @@
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <4 16>;
         };
-
-            
+    };
+ 
+    trackball_listener {
+        compatible = "zmk,input-behavior-listener";
+        device = <&vtrackball>;
+        layers = <0 2 3>;
+        evt-type = <INPUT_EV_REL>;            
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         scale-multiplier = <1>;
@@ -103,12 +108,12 @@
             label = "Raise";
             display-name = "Raise";
             bindings = <
-&trans  &trans  &trans  &trans  &sys_reset  &bootloader    &trans  &trans    &trans        &trans     &kp PRINTSCREEN  &kp PAUSE_BREAK
-&trans  &trans  &trans  &trans  &trans      &trans         &trans  &trans    &trans        &kp HOME   &trans           &trans
-&trans  &trans  &trans  &trans  &trans      &trans         &trans  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans           &trans
-&trans  &trans  &trans  &trans  &trans      &trans         &trans  &trans    &kp DOWN      &kp END    &trans           &trans
-                        &trans  &trans      &trans         &trans  &trans
-                                &trans      &trans         &trans
+&trans  &trans  &trans  &trans  &sys_reset        &bootloader    &trans  &trans    &trans        &trans     &kp PRINTSCREEN  &kp PAUSE_BREAK
+&trans  &trans  &trans  &trans  &trans            &trans         &trans  &trans    &trans        &kp HOME   &trans           &trans
+&trans  &trans  &trans  &trans  &DoubleHomeShift  &trans         &trans  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans           &trans
+&trans  &trans  &trans  &trans  &trans            &trans         &trans  &trans    &kp DOWN      &kp END    &trans           &trans
+                        &trans  &trans            &trans         &trans  &trans
+                                &trans            &trans         &trans
             >;
         };
 
