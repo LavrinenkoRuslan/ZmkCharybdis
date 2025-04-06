@@ -73,6 +73,20 @@
             quick-tap-ms = <150>;
             bindings = <&mo>, <&kp>;
         };
+
+        dhm: double_home_mod {
+            compatible = "zmk,behavior-key-press";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>;
+            before-press-ms = <20>;
+            before-press = <&double_home_macro>;
+        };
+
+        double_home_macro: double_home_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp HOME &kp HOME>;
+        }; 
     };
 
     keymap {
@@ -108,12 +122,12 @@
             label = "Raise";
             display-name = "Raise";
             bindings = <
-&trans  &trans  &trans  &trans  &sys_reset        &bootloader    &trans  &trans    &trans        &trans     &kp PRINTSCREEN  &kp PAUSE_BREAK
-&trans  &trans  &trans  &trans  &trans            &trans         &trans  &trans    &trans        &kp HOME   &trans           &trans
-&trans  &trans  &trans  &trans  &DoubleHomeShift  &trans         &trans  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans           &trans
-&trans  &trans  &trans  &trans  &trans            &trans         &trans  &trans    &kp DOWN      &kp END    &trans           &trans
-                        &trans  &DoubleHomeShift  &trans         &trans  &trans
-                                &trans            &trans         &trans
+&trans  &trans  &trans  &trans  &sys_reset  &bootloader    &trans  &trans    &trans        &trans     &kp PRINTSCREEN  &kp PAUSE_BREAK
+&trans  &trans  &trans  &trans  &trans      &trans         &trans  &trans    &trans        &kp HOME   &trans           &trans
+&trans  &trans  &trans  &trans  &dhm        &trans         &trans  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans           &trans
+&trans  &trans  &trans  &trans  &trans      &trans         &trans  &trans    &kp DOWN      &kp END    &trans           &trans
+                        &trans  &dhm        &trans         &trans  &trans
+                                &trans      &trans         &trans
             >;
         };
 

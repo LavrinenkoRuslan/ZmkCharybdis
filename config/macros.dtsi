@@ -6,11 +6,6 @@
             bindings = <&kp LS(SEMI) &kp LS(V) &kp LS(S) &kp LS(P) &kp RET>;
         };
 
-                DoubleHomeShift: DoubleHomeShift {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp HOME &kp HOME>, <&macro_press &kp LSHFT>, <&macro_release &kp LSHFT>;
-        };
         
         HSplit: HSplit {
             compatible = "zmk,behavior-macro";
