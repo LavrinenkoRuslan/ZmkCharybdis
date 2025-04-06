@@ -76,7 +76,7 @@
 
         dhm: double_home_mod {
             compatible = "zmk,behavior-key-press";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             bindings = <&kp LSHFT>;
             before-press-ms = <20>;
             before-press = <&double_home_macro>;
